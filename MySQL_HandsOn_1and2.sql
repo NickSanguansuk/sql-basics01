@@ -4,9 +4,9 @@
 -- Members
 -- 	Shayla 	Wright
 -- 	Ferhat	Habouche
---		Samir		Hachemi
---		Jorge		Rodriguez
---		McKinley	Williams
+--	Samir		Hachemi
+--	Jorge		Rodriguez
+--	McKinley	Williams
 -- 	Wasin		Sanguansuk
 
 -- ---------- ---------- ---------- ---------- ---------- 
@@ -20,7 +20,7 @@ USE classicmodels;
 
 -- ----------
 -- 1.1 Write a query to display the name, product line, and buy price of all products. 
--- 	 The output columns should display as “Name”, “Product Line”, and “Buy Price”. 
+-- 	 The output columns should display as “Name�?, “Product Line�?, and “Buy Price�?. 
 -- 	 The output should display the most expensive items first.
 
 SELECT * FROM products;
@@ -31,7 +31,7 @@ ORDER BY buyPrice DESC;
 
 -- ----------
 -- 1.2 Write a query to display the first name, last name, and city for all customers from Germany. 
---		 Columns should display as “First Name”, “Last Name”, and “City”. 
+--		 Columns should display as “First Name�?, “Last Name�?, and “City�?. 
 --		 The output should be sorted by the customer’s last name (ascending).
 
 SELECT * FROM customers;
@@ -108,8 +108,8 @@ ORDER BY productLine DESC, productName;
 -- MySQL Hands-On #2: Joins & Grouping
 
 -- ----------
--- 2.1 Write a query to display each customer’s name (as “Customer Name”) alongside the name of the employee who is responsible for that customer’s orders. 
--- 	 The employee name should be in a single “Sales Rep” column formatted as “lastName, firstName”. 
+-- 2.1 Write a query to display each customer’s name (as “Customer Name�?) alongside the name of the employee who is responsible for that customer’s orders. 
+-- 	 The employee name should be in a single “Sales Rep�? column formatted as “lastName, firstName�?. 
 --		 The output should be sorted alphabetically by customer name.
 
 SELECT * FROM customers;
@@ -122,7 +122,7 @@ ORDER BY c.customerName;
 -- ----------
 -- 2.2 Determine which products are most popular with our customers. 
 --		 For each product, list the total quantity ordered along with the total sale generated (total quantity ordered * priceEach) for that product. 
---		 The column headers should be “Product Name”, “Total # Ordered” and “Total Sale”. 
+--		 The column headers should be “Product Name�?, “Total # Ordered�? and “Total Sale�?. 
 --		 List the products by Total Sale descending.
 
 SELECT * FROM products;
@@ -137,7 +137,7 @@ ORDER BY `Total Sale` DESC;
 
 -- ----------
 -- 2.3 Write a query which lists order status and the # of orders with that status. 
---		 Column headers should be “Order Status” and “# Orders”. 
+--		 Column headers should be “Order Status�? and “# Orders�?. 
 --		 Sort alphabetically by status.
 
 SELECT * FROM orders;
@@ -149,7 +149,7 @@ GROUP BY o.status;
 
 -- ----------
 -- 2.4 Write a query to list, for each product line, the total # of products sold from that product line. 
---		 The first column should be “Product Line” and the second should be “# Sold”. 
+--		 The first column should be “Product Line�? and the second should be “# Sold�?. 
 --		 Order by the second column descending.
 
 SELECT DISTINCT status FROM orders;
@@ -163,10 +163,10 @@ ORDER BY `# Sold` DESC;
 
 -- ----------
 -- 2.5 For each employee who represents customers, output the total # of orders that employee’s customers have placed alongside the total sale amount of those orders. 
---		 The employee name should be output as a single column named “Sales Rep” formatted as “lastName, firstName”. 
---		 The second column should be titled “# Orders” and the third should be “Total Sales”. 
+--		 The employee name should be output as a single column named “Sales Rep�? formatted as “lastName, firstName�?. 
+--		 The second column should be titled “# Orders�? and the third should be “Total Sales�?. 
 --		 Sort the output by Total Sales descending. 
---		 Only (and all) employees with the job title ‘Sales Rep’ should be included in the output, and if the employee made no sales the Total Sales should display as “0.00”.
+--		 Only (and all) employees with the job title ‘Sales Rep’ should be included in the output, and if the employee made no sales the Total Sales should display as “0.00�?.
 
 SELECT * FROM employees;
 SELECT * FROM customers;
