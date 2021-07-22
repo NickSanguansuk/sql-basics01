@@ -189,12 +189,15 @@ ORDER BY SUM(od.quantityOrdered * od.priceEach) DESC;
 -- 	 	The first column should be labeled ‘Month’, the second ‘Year’, and the third should be ‘Payments Received’. 
 -- 	  	Values in the third column should be formatted as numbers with two decimals – for example: 694,292.68.
 
-SELECT 
+SELECT * FROM orders;
+SELECT * FROM orderdetails;
 
+SELECT sum(quantityOrdered * priceEach)
+FROM orderdetails;
 
-
-
-
+SELECT monthname(o.orderDate) AS `Month`, year(o.orderDate) AS `Year`, format(sum(od.quantityOrdered * od.priceEach), 2) AS `Payments Received`
+FROM orders AS o INNER JOIN orderdetails AS od USING(orderNumber)
+GROUP BY `Year`, month(o.orderDate);
 
 -- ---------- ---------- ---------- ---------- ---------- 
 
