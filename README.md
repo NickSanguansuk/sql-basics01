@@ -5,12 +5,12 @@ sql-basics01
 
 ## Contributors
 
-* Shayla &nbsp;Wright
-* Ferhat    Habouche
-* Samir     Hachemi
-* Jorge     Rodriguez
-* McKinley  Williams
-* Wasin     Sanguansuk
+* Shayla &nbsp;&nbsp;Wright
+* Ferhat &nbsp;&nbsp;Habouche
+* Samir &nbsp;&nbsp;Hachemi
+* Jorge &nbsp;&nbsp;Rodriguez
+* McKinley &nbsp;&nbsp;Williams
+* Wasin &nbsp;&nbsp;Sanguansuk
 
 ## Files
 
