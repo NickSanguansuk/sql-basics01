@@ -19,6 +19,7 @@ USE classicmodels;
 -- MySQL Hands-On #1: Simple Queries
 
 -- ----------
+
 -- 1.1 	Write a query to display the name, product line, and buy price of all products. 
 -- 	 	The output columns should display as “Name”, “Product Line”, and “Buy Price”. 
 -- 	 	The output should display the most expensive items first.
@@ -30,6 +31,7 @@ FROM products
 ORDER BY buyPrice DESC;
 
 -- ----------
+
 -- 1.2 	Write a query to display the first name, last name, and city for all customers from Germany. 
 -- 		Columns should display as “First Name”, “Last Name”, and “City”. 
 -- 		The output should be sorted by the customer’s last name (ascending).
@@ -42,6 +44,7 @@ WHERE country = 'Germany'
 ORDER BY contactLastName;
 
 -- ----------
+
 -- 1.3 	Write a query to display each of the unique values of the status field in the orders table. 
 -- 		The output should be sorted alphabetically increasing. 
 -- 		Hint: the output should show exactly 6 rows.
@@ -60,6 +63,7 @@ FROM orders
 ORDER BY STATUS;
 
 -- ----------
+
 -- 1.4 	Select all fields from the payments table for payments made on or after January 1, 2005. 
 -- 		Output should be sorted by increasing payment date.
 
@@ -71,6 +75,7 @@ WHERE paymentDate >= '2005-1-1'
 ORDER BY paymentDate;
 
 -- ----------
+
 -- 1.5 	Write a query to display all Last Name, First Name, Email and Job Title of all employees working out of the San Francisco office. 
 -- 		Output should be sorted by last name.
 
@@ -92,6 +97,7 @@ WHERE officeCode <> (SELECT officeCode
 ORDER BY lastName;
 						
 -- ----------
+
 -- 1.6 	Write a query to display the Name, Product Line, Scale, and Vendor of all of the car products – both classic and vintage. 
 -- 		The output should display all vintage cars first (sorted alphabetically by name), and all classic cars last (also sorted alphabetically by name).
 
@@ -108,6 +114,7 @@ ORDER BY productLine DESC, productName;
 -- MySQL Hands-On #2: Joins & Grouping
 
 -- ----------
+
 -- 2.1 	Write a query to display each customer’s name (as “Customer Name”) alongside the name of the employee who is responsible for that customer’s orders. 
 -- 	 	The employee name should be in a single “Sales Rep” column formatted as “lastName, firstName”. 
 -- 		The output should be sorted alphabetically by customer name.
@@ -120,6 +127,7 @@ FROM customers AS c INNER JOIN employees AS e ON c.salesRepEmployeeNumber = e.em
 ORDER BY c.customerName;
 
 -- ----------
+
 -- 2.2 	Determine which products are most popular with our customers. 
 -- 		For each product, list the total quantity ordered along with the total sale generated (total quantity ordered * priceEach) for that product. 
 -- 		The column headers should be “Product Name”, “Total # Ordered” and “Total Sale”. 
@@ -136,6 +144,7 @@ GROUP BY p.productCode
 ORDER BY `Total Sale` DESC;
 
 -- ----------
+
 -- 2.3 	Write a query which lists order status and the # of orders with that status. 
 -- 		Column headers should be “Order Status” and “# Orders”. 
 -- 		Sort alphabetically by status.
@@ -148,6 +157,7 @@ FROM orders AS o -- INNER JOIN orderdetails AS od ON
 GROUP BY o.status;
 
 -- ----------
+
 -- 2.4 	Write a query to list, for each product line, the total # of products sold from that product line. 
 -- 		The first column should be “Product Line” and the second should be “# Sold”. 
 -- 	 	Order by the second column descending.
@@ -162,6 +172,7 @@ GROUP BY `Product Line`
 ORDER BY `# Sold` DESC;
 
 -- ----------
+
 -- 2.5 	For each employee who represents customers, output the total # of orders that employee’s customers have placed alongside the total sale amount of those orders. 
 -- 		The employee name should be output as a single column named “Sales Rep” formatted as “lastName, firstName”. 
 -- 		The second column should be titled “# Orders” and the third should be “Total Sales”. 
@@ -184,6 +195,7 @@ GROUP BY e.employeeNumber
 ORDER BY SUM(od.quantityOrdered * od.priceEach) DESC;
 
 -- ----------
+
 -- 2.6 	Your product team is requesting data to help them create a bar-chart of monthly sales since the company’s inception. 
 -- 		Write a query to output the month (January, February, etc.), 4-digit year, and total sales for that month. 
 -- 	 	The first column should be labeled ‘Month’, the second ‘Year’, and the third should be ‘Payments Received’. 
